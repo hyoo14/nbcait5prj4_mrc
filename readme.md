@@ -6,6 +6,8 @@ MRC (Machine Reading Comprehension) is a task that involves understanding a give
 
 Period| 2023.06.07 ~ 2023.06.22 19:00
 
+[한글로 보기](https://github.com/bootcamphyunwoo/naver_bcait5_lv2_prj4_nlp_mrc)
+
 ## Overview
 
 "서울의 GDP는 세계 몇 위야?", "MRC가 뭐야?"
