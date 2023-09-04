@@ -1,14 +1,12 @@
 # Open-Domain Question Answering
 
-MRC(기계독해)란 주어진 지문을 이해하고, 주어진 질의의 답변을 추론하는 태스크입니다.
+MRC (Machine Reading Comprehension) is a task that involves understanding a given passage and inferring the answer to a provided question.
 
-#부스트캠프5기 #자연어처리
+#Boostcamp 5th #NLP
 
-| 2023.06.07 ~ 2023.06.22 19:00
+Period| 2023.06.07 ~ 2023.06.22 19:00
 
-
-
-## 개요
+## Overview
 
 "서울의 GDP는 세계 몇 위야?", "MRC가 뭐야?"
 
@@ -31,7 +29,7 @@ Question Answering (QA)은 다양한 종류의 질문에 대해 대답하는 인
 
 - output: 주어진 Query에 알맞는 string 형태의 답안
 
-### 평가지표
+### Evaluation Metric
 
 두 가지 평가지표를 사용합니다.
 
@@ -45,7 +43,7 @@ Question Answering (QA)은 다양한 종류의 질문에 대해 대답하는 인
 
 EM 기준으로 리더보드 등수가 반영되고, F1은 참고용으로만 활용됩니다.
 
-### 세부 일정
+### Detailed Timeline
 
 - 프로젝트 전체 기간 (3주) : 6월 5일 (월) 10:00 ~ 6월 22일 (목) 19:00
 
@@ -67,7 +65,7 @@ EM 기준으로 리더보드 등수가 반영되고, F1은 참고용으로만 �
 
 - 포스트세션(추가 GPU 제공 기간) : 8월 2일 (수) ~ 8월 18일 (금)
 
-### 대회 룰
+### Competiton Rule
 
 - [대회 참여 제한] NLP 도메인을 수강하고 있는 캠퍼에 한하여 리더보드 제출이 가능합니다.
 
@@ -102,13 +100,11 @@ AI Stages 대회 공통사항
 
 ## 
 
-### 데이터 구성
+### Data Composition
 
 ![](https://lh4.googleusercontent.com/XJappA1f8bDXu8DBg2rimLPadUxwE_P1bp3J2Bee1ECwTF67HR8fr2GxbAze5HGjFvvdtcLAyoyrS6AWE1Fh6UQUcTXmue196hcgchagAqQsAvPg0hu-zeWlQXRQnsnF19KVuLthlhJKaHESbDQwCkQ)
 
 MRC 데이터의 경우, HuggingFace에서 제공하는 datasets 라이브러리를 이용하여 접근이 가능합니다. 해당 directory를 dataset_name 으로 저장한 후, 아래의 코드를 활용하여 불러올 수 있습니다.
-
-
 
 #train_dataset을 불러오고 싶은 경우
 
@@ -121,8 +117,6 @@ print(dataset)
 Retrieval 과정에서 사용하는 문서 집합(corpus)은 ./data/wikipedia_documents.json 으로 저장되어있습니다. 약 5만 7천개의 unique 한 문서로 이루어져 있습니다.
 
 데이터셋은 편의성을 위해 Huggingface 에서 제공하는 datasets를 이용하여 pyarrow 형식의 데이터로 저장되어있습니다. 다음은 ./data 구조입니다.
-
- 
 
 #전체 데이터
 
@@ -140,7 +134,7 @@ Retrieval 과정에서 사용하는 문서 집합(corpus)은 ./data/wikipedia_do
 
     ./wikipedia_documents.json
 
-### 데이터 예시
+### Data Example
 
 ![](https://lh6.googleusercontent.com/7tBiqEIdiztXpBhUTAg4m9BlB7x2nxJ0jfqcO_UhTUJ6T6g-OfIEkzaNsL9Q1q4OMP8FnuRkNDIZlnv0SHSYkMtd2Fmdanb8i-KUMW-8C0qUMQuySNh27d0V75fzt2_eb80okV1bYDUhzkX28VNpDpI)
 
@@ -172,7 +166,7 @@ Retrieval 과정에서 사용하는 문서 집합(corpus)은 ./data/wikipedia_do
 
 대회가 종료된 후에는 캠퍼분들에게 제공되지 않았던 테스트 데이터를(Private data) 기반으로 최종 리더보드 등수가 결정됩니다.
 
-### 디렉토리 구조 및 파일 요약
+### Directory Structure and File Description
 
 .
 
@@ -310,6 +304,8 @@ inference.py 파일을 위 예시처럼 --do_predict 으로 실행하면 --outpu
 
 3. ./outputs/디렉토리 또한 --overwrite_output_dir 을 추가하지않으면 같은 디렉토리에 저장되지 않으므로, 같은 디렉토리로 중복 실행 시 실행되지 않을 수 있습니다
 
+### Links
+
 Download Data Link
 
 https://aistages-prod-server-public.s3.amazonaws.com/app/Competitions/000242/data/data.tar.gz
@@ -318,19 +314,13 @@ Download Baseline Code Link
 
 https://aistages-prod-server-public.s3.amazonaws.com/app/Competitions/000242/data/code.tar.gz
 
-
-
-## 리더보드
+## Leader Board
 
 ![](https://lh3.googleusercontent.com/u5It-x-vCgozlEX5ikxhSUa2xq5MO2rD2QSzQqspoi4EnLKaj3-SqGW1IAeIHQupgcYPoKJAD6NMtxpIgjO-EnPojv6pxWpBHPiBvH5uyx9rfX4Gon3VT_1yTp8P5-FbrxpMpe1O7ae0lbLvIuGJmLs)
 
 ![](https://lh6.googleusercontent.com/9zyPOJn4DK5HxcRHGBAyQKyc2maTLdYUgrli1yCZzFn5I-o0NndRjfvHfJUh23QudTBppoT2oHPQHqfUKfVoKeHigJ2nYIj3g9xU5Hp-YKoB7dZMNobVI3Yq3GVA3QrQzppPur85pbGyUBx_LN7Qj4Y)
 
-
-
-
-
-## 기타 참고 사항
+## ETC
 
 [공유] PyTorch Lightning으로 Customize하기
 
@@ -362,8 +352,6 @@ Posted by 1pha
 
 혹시 scikit-learn을 사용해보신 적이 있나요? scikit-learn은 굉장히 많은 머신러닝 모델들을 포함하고 있는데요, 사용법이 굉장히 간단합니다. 몇 줄만으로 모델을 정의하고 fitting까지 마무리한 후에 테스트 데이터에 대해 추론하는 것까지 단 몇 줄이면 가능합니다. 물론 이는 모델의 구조나 모델을 훈련하는 방식이 정형화 되어 있기 때문에 아래처럼 쉽게 짤 수 있는 구조인데요, pytorch 모델도 이렇게 쉽게 짜면 굉장히 편할 것 같습니다.
 
-
-
 ```
 from sklearn.ensemble import RandomForestClassifier
 
@@ -381,8 +369,6 @@ cls.predict(X_test)
 살펴보면, pytorchlightning을 통한 model class하나를 생성해서, 해당 클래스 내부에 훈련과 추론하는 코드를 작성하면, 그 외의 부분은 lightning 내부에서 자동으로 처리해주는 구조입니다. 그 후 trainer를 정의하여 방금 정의한 모델과 사용자가 필요한 DataLoader를 넣어서 .fit만 해주면 간단해집니다. 이 .fit은 Huggingface Trainer의 .train과 유사한 기능을 합니다. 그 대신 .train 내에서 돌아가는 코드를 우리가 직접 구현할 수 있다는 것에서 차이가 있습니다.
 
 그렇다면 모델은 어떻게 구성해줘야할까요? 이걸 자세하게 구성해주는 방식은 많은데, 가장 간단한 방식은 batch 단위 행동을 정의해주면 됩니다. batch 단위의 행동이란, dataloader에 대해 for loop를 돌릴 때 내부에서 정의되는 동작입니다. 이를 *_step이라는 메소드를 오버라이드하여 사용할 수 있습니다. 다음과 같이 사용할 수 있습니다. 바로 아래와 같이요
-
-
 
 ```
 import pytorch_lightning as pl
@@ -554,12 +540,6 @@ trainer.fit(model, train_loader)
 
 Huggingface trainer에서는 이것이 불가능하지는 않습니다. 저희가 베이스로 사용하는 [Bert 모델](https://github.com/huggingface/transformers/blob/main/src/transformers/models/bert/modeling_bert.py#L1831)을 살펴보면 아래처럼 구성되어 있는데요
 
-
-
-
-
-
-
 ```
 def forward(
 
@@ -692,8 +672,6 @@ def forward(
         )
 ```
 
-
-
 이 클래스를 상속 받아서 내부 행동 정의를 원하는대로 정리해준다면, 충분히 Lightning을 쓰지 않고도 모델을 건드릴 수 있게 됩니다.
 
 ## 그 외 유용한 기능들
@@ -725,8 +703,6 @@ Metric들을 더 쉽게 시각화해주는 라이브러리들이 많습니다. M
 ## 마치며
 
 PyTorch Lightning은 생각보다 회사에서도 간단하게 mock-up을 실행해봐야할 때 종종 쓰이는 라이브러리입니다. 과거 0.x 버전에는 잔 버그가 너무 많아서 사실 테스트하는 과정에서 에러 수정하는 일이 더 잦았기 때문에 많이 쓰이지 않았지만, 현재 1.7+ 버전까지 등장한 이후로는 에러가 많이 줄어서 사용하기 굉장히 간편한 라이브러리입니다. 하지만 몇 가지 단점이 있는데, 그 중 하나가 multi-gpu 환경에서 DDP(Distributed Data Parallel)가 제대로 작동하지 않는 이슈입니다. 실제로 Pytorch Lightning github에 방문해보면 Issue에서 comment 기준으로 sort 해봤을 때 상위에 DDP 관련된 이슈가 많은 것을 확인할 수 있습니다. 간단하게 테스트해보고, 해당 태스크가 자세히 실험해보거나 더 큰 스케일로 올려서 실험해봐야 한다고 판단이 되면, 직접 trainer를 짜거나 dependency 없이 짜는 것을 추천드립니다. 그리고 자연어 업계에서는 Huggingface 사용이 훨씬 압도적으로 많기 때문에, 당연히 Huggingface에 더 익숙해지는 것을 추천합니다!  
-
-
 
 [공유] Huggingface Space에서 프로젝트 참고하기
 
@@ -771,8 +747,6 @@ Back to List
 Posted by 1pha
 
 2023.05.23.20:58
-
-
 
 협업에서 동일한 code convention은 생산성을 높이는데 매우 중요합니다. 협업이 진행되면 Merge conflict, PR review 등 여러 상황에서 팀원의 코드를 읽고 이해하는 상황이 발생합니다. 이 때, 팀원의 코딩 습관이 나와 맞지 않거나, 혹은 코드 작성 규칙이 나와 다르다면 생산성이 저하됩니다.
 
@@ -860,8 +834,6 @@ outputs = model(**inputs)
 last_hidden_states = outputs.last_hidden_state
 ```
 
-
-
 해당 파일을 stage에 올린 후 commit을 합니다.
 
 ```
@@ -889,8 +861,6 @@ git commit -m "Test pre-commit"
 - flake8을 팀 내에서 사용하기로 결정했다면, project repository의 Github Action에서 flake8을 testing에 등록하는 것도 좋습니다. e.g., Github Action의 testing을 통과한 코드만을 PR에서 merge 할 수 있도록 관리하고 싶다.
 
 - black, flake8, isort 모두 여러 오픈소스 프로젝트에서 사용되는 도구들입니다. 관심 있으신 오픈소스 프로젝트의 pre-commit configurations를 따라해보는 것도 좋은 방법입니다.
-
-
 
 [공유] Data Augmentation using Question Generation
 
@@ -921,8 +891,6 @@ Data Augmentation이란 기본적으로 학습 가능한 데이터를 변형을 
 위 repository의 scripts/run_finetune.py를 대회에서 직접 사용할 수 없기 때문에 아래와 같이 코드를 수정해서 사용했습니다. 해당 코드의 링크 또한 첨부했습니다.
 
 https://github.com/naem1023/mrc-level2-nlp-09/blob/main/question_generation/question_generation.py
-
-
 
 ```
 import sys
