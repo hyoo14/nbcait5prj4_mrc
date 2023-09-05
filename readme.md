@@ -31,6 +31,22 @@ Question Answering (QA)은 다양한 종류의 질문에 대해 대답하는 인
 
 - output: 주어진 Query에 알맞는 string 형태의 답안
 
+## Approaches
+
+### EDA
+
+We have used LLM such as ChatGPT3.5 and HyperClova for augmentation our dataset.
+
+### Models
+
+#### Retriever Models
+
+We have used sparse retriever models from TF-IDF to BM25. BM25 is newer one and performance is better than TF-IDF. We also have applied deep retriever model ColBERT. Accuracy of this model was the best among any other models. ColBERT used embeddings to match query and target passage. There is a special technique called late  interaction. This makes the model cost and time efficient one with not calculating every sequence at every single operation.
+
+#### Reader Models
+
+For reader model, we used Task Adaptive Pre-Training(TAPT). This makes our model's accuracy better than before. We also used 2 stage fine-tuning. In both approaches we have used additional AIHub QA dataset.
+
 ### Evaluation Metric
 
 두 가지 평가지표를 사용합니다.
