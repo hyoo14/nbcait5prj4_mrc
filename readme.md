@@ -2,7 +2,7 @@
 
 MRC (Machine Reading Comprehension) is a task that involves understanding a given passage and inferring the answer to a provided question.
 
-#Boostcamp 5th #NLP
+#BC 5th #NLP
 
 Period| 2023.06.07 ~ 2023.06.22 19:00
 
